@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript页面-基础知识</title>
+    <script type="text/javascript" charset="utf-8" src=js/demo.js>
+    </script>
+    <script>
+        document.write("<h2>Hello World!</h2>");
+        console.log("后台输出");
+        var num = "Hello World !";
+        if (num != undefined){x
+           document.write(typeof num);
+        }
+
+        var result = num.split(" ");
+        for(var x=0;x<result.length;x++){
+           document.write("<h6>"+result[x]+"</h6>");
+        }
+
+        if(num.indexOf("Hello")!=-1){
+           document.write('YES');
+        }
+
+        document.write("<table border='1'>")
+        for(var x=1;x<=9;x++){
+           document.write("<tr>")
+           for(var y=1;y<=x;y++){
+               document.write("<td>"+x+"*"+y+"="+(x*y)+"</td>");
+           }
+        }
+        document.write("</table>")
+
+        var list = new Array(); //动态数组，没有长度
+        list[0] = 100;
+        list[3] = 'Test';
+        list[4] = true;
+        for(var x=0;x<list.length;x++){
+           document.write(list[x]+"-->"+typeof(list[x])+"<br>");
+        }
+
+        function fun(x,y){  //JS中定义的参数数量和传递的数量可以不一致，建议写的时候要一致
+            // switch(fun.arguments.length){    //效果实现失败
+            //     case 0:
+            //         return 0;
+            //     case 1:
+            //         return x;
+            //     case 2:
+            //         return x+y;
+            //     default:
+            //         return "不可能的操作";
+            // }
+            return document.write('函数输出：'+x*y+"<br>");
+        }
+        fun(99,11);
+        fun(99,11,33,66);
+
+        function Book(title,price){
+            //prototype属于对原生的操作扩展
+            this.title = title;
+            this.price = price;
+        }
+        Book.prototype.getInfo = function(first_argument) {
+                return "title="+this.title+"<br>"+"price="+this.price+"<br>";
+        }
+        var book = new Book('Java','6.18');
+        document.write(book.getInfo())
+
+        // 事件处理是JS的核心操作
+
+        function loadHandle(){
+             // alert("欢迎!");
+        }
+
+        function mouseHandle(){
+        //onmousedown鼠标按下 onmouseover鼠标进出 onmouseout鼠标移开 onmouseup鼠标弹开 onmousemove鼠标移动
+             alert("事件触发2");
+        }
+
+        function changecolor(obj,color){ //修改颜色
+            obj.bgColor = color;    //bgColor中C大写才有效
+        }
+
+
+    </script>
+</head>
+<body onunload="">
+    <script type="text/javascript">
+    // 动态设置事件的最大好处是HTML和JS代码不会混合在一起
+        window.onload = function(){
+            loadHandle();
+            var pngElement = document.getElementById("pngid");  //取得图片的id
+            pngElement.addEventlistener("click",mouseHandle,false);  //false表示事件的触发过程处理，阻止冒泡
+            // 事件处理两部分：冒泡过程；触发过程
+        }
+    </script>
+
+    <!-- id是整个JS的操作核心 -->
+    <img id="pngid" src="js/my.png" height="100px" onmousedown="mouseHandle()">
+    <button type="button" onmousedown="mouseHandle();">请点击</button>
+
+    <table border="1" cellpadding="10" cellspacing="0" bgcolor="#ff0000">
+        <tr onmousemove="changecolor(this,'white')" onmouseout="changecolor(this,'#ff0000')">
+            <td>部门编号</td>
+            <td>部门名称</td>
+            <td>部门位置</td>
+        </tr>
+        <tr onmousemove="changecolor(this,'white')" onmouseout="changecolor(this,'#ff0000')">
+            <td>10</td>
+            <td>Data warehouse</td>
+            <td>D座</td>
+        </tr>
+        <tr onmousemove="changecolor(this,'white')" onmouseout="changecolor(this,'#ff0000')">
+            <td>20</td>
+            <td>BI</td>
+            <td>B座</td>
+        </tr>
+    </table>
+
+    <div>
+        世界你好！
+    </div>
+    <pre> 预
+    格式化</pre>
+
+    <!-- div表格布局方法 列方式和行方式 -->
+    <div style="overflow: hidden;background: #f00;">
+        <div style="float: left;width: 20px;background: #ccc;">1</div>
+        <div style="float: left;width: 20px;background: #333;">
+            <div style="width: 10px;background: #666;">2</div>
+            <div style="width: 10px;background: #666;">3</div>
+        </div>
+    </div>
+
+
+    <div style="overflow: hidden;">
+        <div style="float: left;width: 20px;background: #ccc;">1</div>
+        <div style="float: left;width: 200px;background: #333;">
+            <div style="width: 200px;background: #666;">
+                <span style="float: left;width: 100px;">2</span>
+                <span style="float: left;width: 100px;">3</span>
+            </div>
+            <div style="width: 200px;background: #666;">
+                <span style="float: left;width: 100px;">4</span>
+                <span style="float: left;width: 100px;">5</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

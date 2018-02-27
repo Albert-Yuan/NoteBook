@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript页面-window函数</title>
+    <link rel="stylesheet" type="text/css" href="css/mldn.css">
+    <script type="text/javascript">
+        function deleteConfirm(){
+            return window.confirm("确定要删除吗？")
+        }
+
+        var str = window.prompt("请输入你的名字");  //窗口IO
+        document.write(str);
+
+        window.open("html/show.html",'AD页',"width=30;height=30;scollbars=yes;resizeable=no");
+
+        function closeFun(){
+           window.close();   //关闭窗口
+        }
+
+    </script>
+</head>
+<body>
+    <a href="Xxx" onclick="return deleteConfirm()">
+    删除邮件</a>
+    <button onclick="closeFun()">
+        关闭窗口
+    </button>
+    <select id="url" name="url" onchange="go(this.value)">
+        <option>=== 请选择页面 ===</option>
+        <option value="html/show.html">SHOW</option>
+        <option value="http://www.baidu.com">BAIDU</option>   <!-- 360浏览器失败 -->
+    </select>
+</body>
+</html>

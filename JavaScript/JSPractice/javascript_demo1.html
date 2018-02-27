@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript页面-图片浏览</title>
+    <script type="text/javascript">
+        //图片浏览器
+        var imgName = new Array("pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg");
+        var foot = -1 ; //操作的脚标
+        window.onload = function(){
+            var pbut = document.getElementById("previousButton");
+            var nbut = document.getElementById("nextButton");
+
+            var image = document.getElementById("myimg");
+
+            nbut.addEventListener("click",function(){
+                if(foot >= imgName.length-1){
+                    foot=0;
+                }
+                else{
+                    foot++;
+                }
+                image.src = "image/"+imgName[foot];
+            },false);
+
+            pbut.addEventListener("click",function(){
+                if(foot <= 0){
+                    foot=imgName.length-1;
+                }else{
+                    foot--;
+                }
+                image.src = "image/"+imgName[foot];
+            },false);
+        }
+
+    </script>
+</head>
+<body >
+    <span id="info2">
+    </span>
+    <span id="info">
+        <img id ="myimg" src="image/pic1.jpg" width="20%">
+    </span>
+    <div id="controlDiv">
+        <button id="previousButton">上一张</button>
+        <button id="nextButton">下一张</button>
+    </div>
+    <span id="info3">
+    </span>
+</body>
+<script type="text/javascript">
+        function setClock(){
+            var date = new Date();
+            document.getElementById("info2").innerHTML = "<h1>当前系统时间："+date+"</h1>";
+            setTimeout(setClock,1000); //每秒更新
+        }
+        setClock();
+
+        function setPic(){
+            var image = document.getElementById("myimg");
+            if(foot >= imgName.length-1){
+                foot=0;
+            }
+            else if(foot >=-1){
+                foot++;
+            }
+            setTimeout(setPic,4000)
+            image.src = "image/"+imgName[foot];
+        }
+        setPic();
+
+        function setFoot(){
+            document.getElementById("info3").innerHTML = "<h1>当前foot："+foot+"</h1>";
+            setTimeout(setFoot,100); //每秒更新
+        }
+        setFoot();
+</script>
+</html>

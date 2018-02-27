@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 实战-定义表单 -->
+    <title>雇员管理表单</title>
+    <link rel="stylesheet" type="text/css" href="css/mldn.css">
+    <script type="text/javascript" src="js/mldn.js"></script>
+    <script type="text/javascript" src="js/demo4.js"></script>
+    <script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
+</head>
+<body>
+    <form action="xx.htm" method="post" onsubmit="return validate()">
+        <table border="1" cellpadding="5" cellspacing="0" width="100%" bgColor="#F2F2F2">
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td colspan="3">
+                    <span class="title">增加雇员信息</span>
+                </td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td width="15%"><strong>雇员编号</td>
+                <td width="45%"><input type="text" name="empno" id="empno" class="init" maxlength="4" size="4"
+                onblur="validateEmpno()"></td>
+                <td width="40%"><span id="empnoMsg"></span></td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td><strong>雇员姓名</td>
+                <td><input type="text" name="empname" id="empname" class="init" onblur="validateEmpname()"></td>
+                <td><span id="empnameMsg"></span></td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td><strong>雇员职位</td>
+                <td><input type="text" name="job" id="job" class="init" onblur="validateEmpjob()"></td>
+                <td><span id="jobMsg"></span></td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td><strong>雇用日期</td>
+                <td><input type="text" name="hiredate" id="hiredate" class="init"  onClick="WdatePicker()" readonly="readonly"></td>
+                <td><span id="hiredateMsg"></span></td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td><strong>基本工资</td>
+                <td><input type="text" name="sal" id="sal" class="init" onblur="validateEmpsal()"></td>
+                <td><span id="salMsg"></span></td>
+            </tr>
+            <tr onmousemove="changeColor(this,'#FFFFFF')" onmouseout="changeColor(this,'#F2F2F2')">
+                <td><strong>佣&nbsp;&nbsp;&nbsp;&nbsp;金</td>
+                <td><input type="text" name="comm" id="comm" class="init" onblur="validateEmpcomm()"></td>
+                <td><span id="commMsg"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" name="提交">
+                    <input type="reset" name="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

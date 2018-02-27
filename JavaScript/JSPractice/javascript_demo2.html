@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/mldn.css">
+    <title>JavaScript页面-表单</title>
+    <script type="text/javascript" src="js/demo2.js">
+        //表单应用 src="js/demo2.js"
+        function showCity(city){
+            alert(city)
+        }
+
+        function onkeyEvent(){
+            var note = document.getElementById("note")
+            var msg = document.getElementById("noteMsg");
+            // msg.innerHTML = "数据长度为："+note.value.length;
+            var len = note.value.length;
+            if(len <= 10){
+                msg.innerHTML = "还可以输入"+(10-len)+"长度的字符。"
+                document.getElementById("sub").disabled = false;
+            }else{
+                msg.innerHTML = "输入的内容过长！"
+                document.getElementById("sub").disabled = true;
+            }
+        }
+
+
+
+    </script>
+</head>
+<body >
+    <!-- onsubmit事件 表单拦截 form中onsubmit事件的状态 -->
+    <!-- 获得焦点事件onfocs 失去焦点事件onblur -->
+
+    <!-- 用户名和密码 -->
+    <form action="html/show.html" method="post" onsubmit="return showEmail()">
+        请输入email地址：<input type="text" name="mail" id="email"
+        value="" class="init" onblur="showEmail()">
+        <span id="emailMsg"></span><br>
+
+        <button type="submit" onclick="showEmail()">显示内容</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    输入密码：<input type="password" name="pass1" id="pwd">
+    <span id="pwdMsg"></span><br>
+    确认密码：<input type="password" name="pass2" id="conf">
+    <span id="confMsg"></span><br>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- 单选钮 -->
+    <!-- 单选钮和复选框 如果多个id或name相同，使用document.getElementById会去的第一个元素 -->
+    <!-- 如果想去的整个对象数组，可以使用document.all -->
+    请选择性别：<input type="radio" name="sex" id ="sex" value="男" checked="">男&nbsp
+    <input type="radio" name="sex"   ="sex" value="女">女<br>
+    <button>显示性别</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- 复选框 -->
+    请选择水果：<br>
+    <input type="checkbox" id="fruits" name="fruits" value="提子" checked>提子<br>
+    <input type="checkbox" id="fruits" name="fruits" value="苹果">苹果<br>
+    <input type="checkbox" id="fruits" name="fruits" value="橙子">橙子<br><br>
+    <input type="checkbox" id="all" name="all" value="全选" onclick="selectAll()">全选
+    <button>显示水果</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- 下拉框 -->
+    选择地区:<select name="city" id="area" onchange="showCity(this.value)">
+        <option value="DC">东城区</option>
+        <option value="XC">西城区</option>
+        <option value="CY">朝阳区</option>
+        <option value="HD">海淀区</option>
+    </select><br>
+
+    <br>
+
+    <!-- 文本域 大文本信息-->
+    <form action="html/show.html" method="post">
+        描述：<textarea id="note" name="noteArea" cols="50" rows="10" onkeydown="onkeyEvent()">Hello!</textarea><br>
+        <span id="noteMsg"></span><br>
+        <button type="submit" name="submit" id="sub" disabled=false>保存</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
