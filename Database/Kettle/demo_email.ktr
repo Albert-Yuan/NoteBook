@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>BI_WORK_CHECK</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection>bi_rpt_db</connection>
+<schema/>
+<table>etl_trans_log</table>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2016&#x2f;04&#x2f;13 17&#x3a;37&#x3a;06.129</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;10&#x2f;24 11&#x3a;34&#x3a;46.497</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>&#x5f00;&#x53d1;&#x65f6;&#x95f4;&#xff1a;2016-04-25&#xd;&#xa;&#x521b;&#x5efa;&#x4eba;&#xff1a;&#xd;&#xa;&#x529f;&#x80fd;&#x63cf;&#x8ff0;&#xff1a;&#x68c0;&#x67e5;&#x5f53;&#x5929;&#x7684;kettle&#x65e5;&#x5fd7;&#xff0c;&#x5e76;&#x53d1;&#x9001;&#x90ae;&#x4ef6;&#xd;&#xa;</note>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+      <width>258</width>
+      <heigth>75</heigth>
+      <fontname>&#x5fae;&#x8f6f;&#x96c5;&#x9ed1;</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>bi_rpt_db</name>
+    <server>&#x24;&#x7b;bi_rpt_host&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;bi_rpt_dbname&#x7d;</database>
+    <port>&#x24;&#x7b;bi_rpt_port&#x7d;</port>
+    <username>&#x24;&#x7b;bi_rpt_username&#x7d;</username>
+    <password>&#x24;&#x7b;bi_rpt_passwd&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;bi_rpt_port&#x7d;</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>&#x81ea;&#x5b9a;&#x4e49;&#x5e38;&#x91cf;&#x6570;&#x636e;</from><to>&#x8bb0;&#x5f55;&#x96c6;&#x8fde;&#x63a5;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x8868;&#x8f93;&#x5165;</from><to>&#x8bb0;&#x5f55;&#x96c6;&#x8fde;&#x63a5;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x8bb0;&#x5f55;&#x96c6;&#x8fde;&#x63a5;</from><to>&#x53d1;&#x9001;&#x90ae;&#x4ef6;</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>&#x53d1;&#x9001;&#x90ae;&#x4ef6;</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <server>Smtp server</server>
+      <port>Smtp port</port>
+      <destination>Addressee</destination>
+      <destinationCc>Cc</destinationCc>
+      <destinationBCc>Bcc</destinationBCc>
+      <replyToAddresses>Reply&#xd;&#xa;</replyToAddresses>
+      <replyto>Sender</replyto>
+      <replytoname>Sender name</replytoname>
+      <subject>Theme</subject>
+      <include_date>Y</include_date>
+      <include_subfolders>N</include_subfolders>
+      <zipFilenameDynamic>N</zipFilenameDynamic>
+      <isFilenameDynamic>N</isFilenameDynamic>
+      <attachContentFromField>N</attachContentFromField>
+      <attachContentField/>
+      <attachContentFileNameField/>
+      <dynamicFieldname>Log_file</dynamicFieldname>
+      <dynamicWildcard>log_filter</dynamicWildcard>
+      <dynamicZipFilename/>
+      <sourcefilefoldername/>
+      <sourcewildcard> </sourcewildcard>
+      <contact_person>Contacts</contact_person>
+      <contact_phone>Phone</contact_phone>
+      <comment>Body</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <zip_limit_size>0</zip_limit_size>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user>Sender</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7f2e49b18bd63c99dbdde</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>normal</priority>
+    <importance>normal</importance>
+    <sensitivity>normal</sensitivity>
+    <secureconnectiontype>SSL</secureconnectiontype>
+      <embeddedimages>
+      </embeddedimages>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>816</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x81ea;&#x5b9a;&#x4e49;&#x5e38;&#x91cf;&#x6570;&#x636e;</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>Addressee</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Cc</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bcc</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Sender name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Smtp server</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Smtp port</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Sender</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Password</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Theme</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Body2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Reply&#xd;&#xa;</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Contacts</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Phone</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Log_file</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line> <item>xxx</item><item>xxx</item><item/><item>kettle</item><item>xxx</item><item>587</item><item>xxx</item><item>xxx</item><item>BI&#x8dd1;&#x6279;&#x68c0;&#x67e5;</item><item/><item>xxx</item><item>xxx</item><item>xxx</item><item>&#x2f;home&#x2f;dataDir&#x2f;cloud&#x2f;deploy&#x2f;confs&#x2f;kettle&#x2f;run_bi&#x2f;log</item> </line>
+    </data>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x8868;&#x8f93;&#x5165;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>bi_rpt_db</connection>
+    <sql>select CONCAT&#x28;&#x27;&#x5c;r&#x5c;n&#x4e00;&#x3001;&#x603b;&#x7ed3;&#xff1a;BI&#x7cfb;&#x7edf;&#x6628;&#x5929;&#x6267;&#x884c;&#x4efb;&#x52a1;&#x27;,yesterday_cnt,&#x27;&#x4e2a;&#xff0c;&#x27;&#xd;&#xa;              ,&#x27;&#x4eca;&#x5929;&#x6267;&#x884c;&#x4efb;&#x52a1;&#x27;,today_cnt,&#x27;&#x4e2a;&#xff0c;&#x27;,&#x27;&#x5176;&#x4e2d;&#x62a5;&#x9519;&#x4efb;&#x52a1;&#x27;,error_cnt,&#x27;&#x4e2a;&#x3002;&#x5c;r&#x5c;n&#x27;&#xd;&#xa;&#xd;&#xa;              ,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x4e8c;&#x3001;&#x5f02;&#x5e38;&#x63d0;&#x9192;&#xff1a;&#x27;,if&#x28;e_trans is null and less_trans is null and more_trans is null,&#x27;&#x65e0;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;                                          ,if&#x28;e_trans is null,&#x27;&#x27;,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x62a5;&#x9519;&#x7684;&#x4efb;&#x52a1;&#x6709;&#x3a;&#x5c;r&#x5c;n    &#x27;,e_trans&#x29;&#x29;&#xd;&#xa;                                          ,if&#x28;less_trans is null,&#x27;&#x27;,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x5c11;&#x8dd1;&#x7684;&#x4efb;&#x52a1;&#x6709;&#x3a;&#x5c;r&#x5c;n    &#x27;,less_trans&#x29;&#x29;&#xd;&#xa;                                          ,if&#x28;more_trans is null,&#x27;&#x27;,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x591a;&#x8dd1;&#x7684;&#x4efb;&#x52a1;&#x6709;&#x3a;&#x5c;r&#x5c;n    &#x27;,more_trans&#x29;&#x29;&#xd;&#xa;                      &#x29;&#xd;&#xa;&#xd;&#xa;              ,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x5c;r&#x5c;n&#x4e09;&#x3001;&#x4efb;&#x52a1;&#x8be6;&#x7ec6;&#x4fe1;&#x606f;&#x3a;&#x5c;r&#x5c;n&#x4efb;&#x52a1;        &#x8868;&#x540d;        &#x65e5;&#x62a5;&#x540d;        &#x8868;&#x5f00;&#x53d1;        &#x9875;&#x9762;&#x5f00;&#x53d1;        &#x9700;&#x6c42;&#x65b9;        &#x6570;&#x636e;&#x751f;&#x6210;&#x65f6;&#x95f4;        &#x62a5;&#x8868;&#x53d1;&#x9001;&#x65f6;&#x95f4;&#x5c;r&#x5c;n&#x27;,relation&#x29;&#xd;&#xa;&#xd;&#xa;              ,if&#x28;e_log is null,&#x27;&#x5c;r&#x5c;n&#x5c;r&#x5c;n&#x56db;&#xff1a;&#x62a5;&#x9519;&#x8be6;&#x7ec6;&#x65e5;&#x5fd7;&#x3a;&#x65e0;&#x5c;r&#x5c;n&#x27;,concat&#x28;&#x27;&#x5c;r&#x5c;n&#x5c;r&#x5c;n&#x56db;&#xff1a;&#x62a5;&#x9519;&#x8be6;&#x7ec6;&#x65e5;&#x5fd7;&#x3a;&#x5c;r&#x5c;n&#x27;,e_log&#x29;&#x29;&#xd;&#xa;&#xd;&#xa;              &#x29;  body&#xd;&#xa;       &#x23;,CONCAT&#x28;&#x27;.&#x2a;BI_DAY_&#x27;,DATE_FORMAT&#x28;CURDATE&#x28;&#x29;,&#x27;&#x25;Y&#x25;m&#x25;d&#x27;&#x29;,&#x27;.&#x2a;&#x27;&#x29; log_filter&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x8bb0;&#x5f55;&#x96c6;&#x8fde;&#x63a5;</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>&#x81ea;&#x5b9a;&#x4e49;&#x5e38;&#x91cf;&#x6570;&#x636e;</step1>
+<step2>&#x8868;&#x8f93;&#x5165;</step2>
+    <keys_1>
+    </keys_1>
+    <keys_2>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>624</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
