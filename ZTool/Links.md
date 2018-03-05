@@ -29,3 +29,5 @@
 <https://www.cnblogs.com/windphoenix/archive/2013/04/26/3044784.html>
 #SqlServer字符集
 <http://blog.csdn.net/wstoneh01/article/details/50588720>
+#Hive基本查询
+<http://blog.csdn.net/lskyne/article/details/38427895>

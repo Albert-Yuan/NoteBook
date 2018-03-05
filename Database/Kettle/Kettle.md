@@ -122,7 +122,4 @@ kettle-registry-extensions.xml
 cfgbuilder - Warning: The configuration parameter [org] is not supported by the default configuration builder for scheme: sftp
 #想把这个Warning也处理掉
 #有人解释说这是一个bug，将会在7.0中得到解决 It is listed as a bug which indicates it will be resolved in v7.0.
-
-
-#虽然最终解决了问题，而且有些插件和功能是不使用的，但是资料太少，没能从原理上解决，还是很遗憾
 ```

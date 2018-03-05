@@ -1,4 +1,6 @@
+desc xx.xxx;
 describe xx.xxx;
+
 
 select * from xx.xxxx
 where update_time > '2017-02-22';
