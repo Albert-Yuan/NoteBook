@@ -15,14 +15,14 @@ IPython是一个增强版Python shell
 
 sc.textFile() 来创建一个代表文件中各行文本的RDD //SparkContext
 
+用户可以使用两种方法创建 RDD： 读取一个外部数据集，或在驱动器程序里分发驱动器程序中的对象集合（ 比如 list 和 set）。
 
+默认情况下，Spark的RDD会在你每次对它们进行行动操作时重新计算
+如果想在多个行动操作中重用同一个RDD可以使用RDD.persist()把RDD缓存
+cache()与使用默认存储级别调用persist()是一样的
+RDD的转化操作都是惰性求值的，在被调用行动操作之前Spark不会开始计算
 
-
-
-
-
-
-
+两个最常用的转化操作是 map() 和 filter()
 
 
 
