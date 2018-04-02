@@ -163,8 +163,8 @@ kylin_job_conf.xml
 
 电子邮件实现任务报警，在配置文件kylin.properties中进行设置
 
-
-
+清理元数据
+清理存储器
 
 
 
