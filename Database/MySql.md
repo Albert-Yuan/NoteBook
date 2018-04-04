@@ -222,3 +222,12 @@ CONCAT(TRUNCATE(SUM(data_free)/1024/1024,2),'MB') AS data_free,
 CONCAT(TRUNCATE(SUM(index_length)/1024/1024,2),'MB') AS index_size
 FROM information_schema.tables WHERE TABLE_NAME = '表名';
 ```
+
+### COST分析
+```
+show profile 和 show profiles 语句可以展示当前会话(退出session后,profiling重置为0) 中执行语句的资源使用情况
+
+show profiles :列表,显示最近发送到服务器上执行的语句的资源使用情况.显示的记录数由变量:profiling_history_size 控制,默认15条
+show profile: 展示最近一条语句执行的详细资源占用信息,默认显示 Status和Duration两列
+show profile 还可根据 show profiles 列表中的 Query_ID ,选择显示某条记录的性能分析信息
+```

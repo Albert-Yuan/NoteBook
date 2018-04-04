@@ -103,3 +103,34 @@ start=`date -d "$start +1 day" +%Y%m%d`
 
 done
 ```
+
+#### scp传输
+```
+scp /home/daisy/full.tar.gz root@192.168.1.1:/home/root
+-a 尽可能将档案状态、权限等资料都照原状予以复制。
+-r 若 source 中含有目录名，则将目录下之档案亦皆依序拷贝至目的地。
+-f 若目的地已经有相同档名的档案存在，则在复制前先予以删除再行复制。
+```
+
+#### 后台命令执行
+```
+Linux
+当在系统上执行下面的命令，将test.sh脚本放到后台执行
+/location/test.sh &
+此时，分两种情况考虑问题，
+一：继续执行exit命令退出当前session, 则 test.sh这个脚本仍然在Linux系统里面运行，
+二：不执行exit命令退出，而直接断开当前连接，则 test.sh脚本会立即退出
+如果使用下面命令，将test.sh脚本放到后台执行
+nohup /location/test.sh &
+上面的两种情况，test.sh脚本都会继续在系统上运行，尽量同时使用nohup和&命令
+
+AIX
+当在系统上执行下面的命令，将test.sh脚本放到后台执行
+/location/test.sh &
+此时，按照上面Linux系统下的两种情况来看
+一：继续执行exit命令退出当前session, 第一次会提示"You have running jobs", 再次执行exit后，test.sh脚本也将停止运行
+二：不执行exit命令退出，而直接断开当前连接，则 test.sh脚本会立即退出
+如果使用下面命令，将test.sh脚本放到后台执行
+nohup /location/test.sh &
+则，针对上面的两种情况来说，test.sh脚本都会继续在系统上运行。
+```
