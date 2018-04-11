@@ -3,6 +3,13 @@
 - Hbuilder 自带tomcat
 
 - 文本编辑器
+
+##### 开启Package Control
+```
+使用Ctrl+`快捷键或者通过View->Show Console菜单打开命令行，粘贴如下代码：
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+```
+
 # 插件
 ```sh
 SQL Bueatifier
@@ -28,6 +35,7 @@ IMESupport
 环境设置
 {
     "color_scheme": "Packages/Color Scheme - Default/IDLE.tmTheme",
+    //"color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,
     "font_size": 15,
