@@ -10,6 +10,13 @@
 import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 ```
 
+##### 增加右键打开选项
+
+- win+R打开cmd窗口，输入regedit,打开注册表
+- 依次找到HKEY_CLASSESS_ROOT->*->Shell，下面新建项，命名为Edit with Sublime Text3
+- 在项“Edit with Sublime Text”下新建字符串值，命名为Icon，值为C:\xxx\Sublime Text 3\sublime_text.exe,0
+- 在项“Edit with Sublime Text”下新建项Command，Command项下默认值修改为 C:\xxx\sublime_text.exe %1
+
 # 插件
 ```sh
 SQL Bueatifier

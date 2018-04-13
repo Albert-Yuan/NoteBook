@@ -49,11 +49,6 @@ find ./ -mtime -2 |xargs grep 'Blueprint'
 sed -i "s/puhui.decision_score_tcard/puhui_decision.decision_score_tcard/g" `grep puhui.decision_score_tcard -rl ./repository_bi`
 ```
 
-####
-```sh
-
-```
-
 
 #### Kettle自动补数脚本
 - eg:sh yuan_ktr.sh 20160519 20160519 bi_trans bi_gd_sell_day.ktr
