@@ -70,3 +70,29 @@ IMESupport
 
 - Package Control无法连接搜索，原因一般是网络问题，重试即可
 - 列编辑：鼠标右键＋Shift; Ctrl+Shift+L 列选模式; 配合Shift键来多选每行的字符
+
+##### OmniMarkupPreview 插件故障
+```
+buffer_id(29) is not valid (closed or unsupported file format)
+Quick Fix 1: Remove Strikethrough Extension
+
+Sublime Text > Preferences > Package Settings > OmniMarkupPreviewer > Settings - User
+paste the following to remove the strikeout package.
+
+{
+    "renderer_options-MarkdownRenderer": {
+        "extensions": ["tables", "fenced_code", "codehilite"]
+    }
+}
+Quick Fix 2: Fix the Strikethrough Extension (if you need it)
+
+Find the python-markdown sublime package.
+
+On the Mac: subl "首选项=>浏览插件目录/Packages/OmniMarkupPreviewer/OmniMarkupLib/Renderers/libs/mdx_strikeout.py"
+
+Replace the makeExtension() method with the following:
+
+def makeExtension(*args, **kwargs):
+    return StrikeoutExtension(*args, **kwargs)
+Save, quit and reload Sublime Text.
+```

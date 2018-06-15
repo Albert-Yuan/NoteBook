@@ -51,7 +51,7 @@ sed -i "s/puhui.decision_score_tcard/puhui_decision.decision_score_tcard/g" `gre
 
 
 #### Kettle自动补数脚本
-- eg:sh yuan_ktr.sh 20160519 20160519 bi_trans bi_gd_sell_day.ktr
+- eg:sh yuan_ktr.sh 20160519 20160519 bi_trans xxx.ktr
 
 ```sh
 #!/bin/sh
@@ -128,4 +128,9 @@ AIX
 如果使用下面命令，将test.sh脚本放到后台执行
 nohup /location/test.sh &
 则，针对上面的两种情况来说，test.sh脚本都会继续在系统上运行。
+```
+
+####空操作
+```
+:
 ```

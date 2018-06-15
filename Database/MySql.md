@@ -21,7 +21,7 @@ are the same size, but VARCHAR(10)and CHAR(15)are not.
 
 #### 查询直接导出到文件
 ```sql
-select * from op_mobile_backflow_20170223
+select * from xxx
 where mobile  like '13%'
 into outfile 'd:\yuan.txt' fields terminated by '|' enclosed by '"'
 ```
@@ -52,6 +52,7 @@ show grants; #查看当前用户的权限
 #### Linux下MySql连接
 ```sh
 mysql -h xx.xx.xx.xx -u xxx -pxx.xxxxx
+connect jdbc:mysql://xx.xx.xx.xx:3306/xx --username  xxx  --password xxx  -e "select .."
 ```
 
 #### 数据库超时时间检查
