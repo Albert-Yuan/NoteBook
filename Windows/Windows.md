@@ -2,13 +2,15 @@
 
 ####修改配置路由表
 ```
+route print
+
 route -p add 0.0.0.0 mask 0.0.0.0 192.168.0.1 metric 1
 route -p add 0.0.0.0 mask 0.0.0.0 192.168.0.115 metric 20
 route -p add 0.0.0.0 mask 0.0.0.0 30.16.201.107 metric 300
 
 route -p add 0.0.0.0 mask 0.0.0.0 192.168.0.1
 
-route delete 0.0.0.0
+route delete 0.0.0.0  #缺省路由
 
 route -p add 10.18.20.0 mask 255.255.255.0 30.16.201.107 metric 10
 route -p add 30.16.3.0 mask 255.255.255.0 30.16.201.107 metric 10

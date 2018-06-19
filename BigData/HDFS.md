@@ -1,11 +1,11 @@
-# HDFS
+﻿# HDFS
 ##### hadoop官方文档
 <http://hadoop.apache.org/docs/r2.6.4/hadoop-project-dist/hadoop-common/FileSystemShell.html>
 
 ##### 查看数据文件
 - hdfs dfs -ls /xxx
 
-##### HDFS中常用到的命令
+#####   HDFS中常用到的命令
 ```
 lhadoop fs
 hadoop fs -ls /
@@ -28,3 +28,7 @@ hadoop dfsadmin -setBalancerBandwidth 1000
 lhadoop fsck
 lstart-balancer.sh
 ```
+
+
+
+
