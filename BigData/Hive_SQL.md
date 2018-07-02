@@ -188,3 +188,15 @@ FIRST_VALUE | LAST_VALUE 语法
 ##### Tab字符问题
 - -file命令支持执行的文件里有Tab字符
 - 标准的sql里面不支持有Tab字符
+
+##### 命令行传参
+```
+-e : 执行短命令
+-f : 执行文件（适合脚本封装）
+-S : 安静模式，不显示MR的运行过程
+-d : 传参数，普通参数
+-hivevar :  传参数 ，专门提供给用户自定义变量。
+-hiveconf : 传参数，包括了hive-site.xml中配置的hive全局变量。
+
+hive -d start_dt=$start_dt -d end_dt=$end_dt -d p_month=$p_month -f "$TABLE_NAME"".sql"
+```

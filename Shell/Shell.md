@@ -134,3 +134,11 @@ nohup /location/test.sh &
 ```
 :
 ```
+
+
+####日起计算
+```
+date -d "1 month -1 day 2018-05-01" +%Y-%m-%d
+
+a=`date -d "\`date -d 2018-05-01 +%Y%m01\` last day" +%Y-%m-%d` --该写法必须有赋值
+```
