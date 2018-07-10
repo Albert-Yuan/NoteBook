@@ -200,3 +200,8 @@ FIRST_VALUE | LAST_VALUE 语法
 
 hive -d start_dt=$start_dt -d end_dt=$end_dt -d p_month=$p_month -f "$TABLE_NAME"".sql"
 ```
+
+##### 打印表头
+```
+set hive.cli.print.header = true;
+```
