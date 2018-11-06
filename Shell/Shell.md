@@ -142,3 +142,37 @@ date -d "1 month -1 day 2018-05-01" +%Y-%m-%d
 
 a=`date -d "\`date -d 2018-05-01 +%Y%m01\` last day" +%Y-%m-%d` --该写法必须有赋值
 ```
+
+
+####捕获异常
+```
+echo $? #捕获上一条命令的输出 (if 0 正常 else 错误)
+set -e 当命令以非零状态退出时，则退出shell，立即退出，避免错误被忽略，
+1. 当命令的返回值为非零状态时，则立即退出脚本的执行。
+2. 作用范围只限于脚本执行的当前进行，不作用于其创建的子进程。
+3. 另外，当想根据命令执行的返回值，输出对应的log时，最好不要采用set -e选项，而是通过配合exit 命令来达到输出log并退出执行的目的。
+```
+
+
+###其他异常
+```
+trap [COMMAND] [SIGNAL] 只能够针对简单命令
+代表trap会捕获信号[SIGNAL]后运行[COMMAND]
+#!/bin/bash
+trap “echo Fail unexpectedly on line \$FILENAME:\$LINENO!” ERR mkdir xxxx rm xxx
+```
+
+
+###字符集
+- linux下vi查看gbk文件正常显示（默认字符集utf-8）":e ++enc=cp936"
+- 字符集转换
+```
+iconv -f UTF-8 -t GBK 1.txt -o 2.txt
+iconv -f GBK -t UTF-8 2.txt -o 3.txt
+```
+
+
+###不同系统间的行尾表示
+- UNIX格式，每行的行尾都是用一个0x0a字符（换行字符LF）表示的，
+- WINDOWS/DOS下每行的行尾都是用0x0d 0x0a两个字符（回车字符CR，换行字符LF）表示的，
+- MAC机，每行的行尾都是0x0d字符表示，即回车字符CR。

@@ -72,12 +72,13 @@ sqoop import \
 --append 追加
 --m 1 map数量控制 必须指定split-by的列才能用多个map
 --split-by "mod(cast(substr(reverse(contractno),1,1) as int),10)" 尽量均匀分布保证多map时的均衡
+--split-by对非数字类型的字段支持不好。一般用于主键及数字类型的字段
 --hive-drop-import-delims  导入到hive时删除 \n, \r, and \01
 ```
 
 - No primary key could be found for table xxx. Please specify one with --split-by or perform a sequential import with '-m 1'
 - 1.将你的map个数设置为1（Sqoop默认是4）
-- 2.使用--split-by，后面跟上表的最后一列名字,从而能够对数据进行分行
+- 2.使用--split-by，后面跟上表的一列名字,从而能够对数据进行分行
 
 #####sqoop优化
 表大的时候需要设置多个mapper，并设置分片字段。
@@ -204,4 +205,13 @@ hive -d start_dt=$start_dt -d end_dt=$end_dt -d p_month=$p_month -f "$TABLE_NAME
 ##### 打印表头
 ```
 set hive.cli.print.header = true;
+```
+
+##### 正则
+```
+select regexp_extract('1:2222\073333','1:([\\w]*)',1) ;
+select regexp_extract('项目:和可转\073产品','项目:([^\\x00-\\xff]*)',1) ;
+select regexp_extract('项目:和可0123456789转\073产品','项目:([^\\x00-\\x2f\\x3a-\\xff]*)',1);
+select regexp_extract('项目:和可0123456789转\073产品','项目:([^\\x3b]*)',1);
+注意：在hive中，不转义\\的16进制正则表达式可能有两种过滤，转码的涵义过滤和字符本身过滤
 ```
